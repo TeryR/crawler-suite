@@ -27,6 +27,23 @@ T:/python310/python.exe -c "from DrissionPage import ChromiumPage; print('ok')"
 - 商家数据：优先交付 公司名/固话/地址；个人手机号默认剔除，客户明确要求时提醒风险后以脱敏形态给
 - 样本先行：全量跑之前先出 20 条样本给客户确认字段口径
 
+## 模板 00：上市公司财务三表（akshare 路线，2026-10-22 实测通过）
+
+论文类金融数据单的答案：**先 akshare 再谈爬**。东财接口免登录直连，比亚迪(SZ002594)实测 20 秒拉全量三表。
+
+```python
+# pip install akshare openpyxl -i https://mirrors.aliyun.com/pypi/simple/ （清华源拉不到 akshare，用阿里源）
+import akshare as ak
+bs = ak.stock_balance_sheet_by_report_em(symbol='SZ002594')   # 资产负债表 71期×319字段
+pl = ak.stock_profit_sheet_by_report_em(symbol='SZ002594')    # 利润表 74期×203
+cf = ak.stock_cash_flow_sheet_by_report_em(symbol='SZ002594') # 现金流量表 74期×254
+# 三个 DataFrame 各写一个 sheet 到 xlsx，openpyxl 重新打开验证 sheet 名与报告期
+```
+
+- 年度/单季变体：`_by_yearly_em` / `_by_quarterly_em`；退市公司用 `_delisted_em`
+- 验收口径：最新报告期是否到上季度、三表齐全、xlsx 能打开
+- 这类单子工时≈10分钟（含核对），报价锚 50-150 元
+
 ## 模板 01：京东商品+价格（h5 路线）
 
 目标字段：sku_id / 标题 / 价格 / 店铺名 / 评论数（+评论明细走模板 02）。要点：
