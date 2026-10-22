@@ -1,0 +1,21 @@
+{
+  "name": "crawler-suite",
+  "version": "0.1.0",
+  "description": "爬虫接单工作台 — 接单分诊(crawler-triage) + 爬虫蓝图(scraper-blueprint)：判定风险、选武器、出 DrissionPage 模板",
+  "type": "module",
+  "license": "MIT",
+  "main": "index.mjs",
+  "engines": {
+    "node": ">=18",
+    "dsh": ">=0.1.7 <0.3"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh": ">=0.1.7 <0.3"
+  },
+  "dependencies": {},
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

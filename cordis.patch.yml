@@ -1,0 +1,4 @@
+# crawler-suite bundle patch — skills-only 插件，仅注册本体。
+- insert:
+    - id: crawler-suite-installer
+      name: crawler-suite
