@@ -1,0 +1,14 @@
+{
+  "template": "01-browser",
+  "keyword": "无线鼠标",
+  "steps": {
+    "search": {
+      "url": "https://plogin.m.jd.com/login/login?appid=2193&czLogin=1&returnurl=https%3A%2F%2",
+      "title": "京东登录注册",
+      "skus": [],
+      "skus_fallback": [],
+      "error": "rendered page still no sku"
+    }
+  },
+  "ok": false
+}

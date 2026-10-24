@@ -1,0 +1,20 @@
+{
+  "template": "04-bilibili",
+  "steps": {
+    "rank": {
+      "code": 0,
+      "videos": 100
+    },
+    "view": {
+      "bvid": "BV1xrnz6gEVD",
+      "title": "折1万次，会坏吗？iPhone Duo深度评测",
+      "owner": "影视飓风",
+      "play": 7336124
+    },
+    "reply": {
+      "count": 3,
+      "sample": "不是，这视频做的好像我没见过折叠屏一样[笑哭]都2026年了"
+    }
+  },
+  "ok": true
+}
